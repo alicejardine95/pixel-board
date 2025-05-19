@@ -22,7 +22,7 @@
   }
 
   .title {
-    font-size: 60px;
+    font-size: 100px;
     text-align: center;
     font-family: 'Smooch Sans', sans-serif;
   }
@@ -31,4 +31,18 @@
     text-align: center;
     font-size: 40px;
     font-family: 'Smooch Sans', sans-serif;
+  }
+
+  .btn-teal {
+    background-color: teal;
+    color: white;
+    display: block;
+    width: 20%;
+    margin: 0 auto;
+    padding: 0 autol
+  }
+
+  .btn-teal:hover {
+    background-color: #6a9dd8; /* Darker teal on hover */
+    color: rgb(255, 255, 255);
   }
