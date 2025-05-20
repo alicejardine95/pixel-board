@@ -1,4 +1,8 @@
-
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
   /*Bootstrap navbar styling*/
   .custom-navbar .navbar-brand,
@@ -12,6 +16,7 @@
 
   body {
     background-color: #ffffff;
+    padding: 15px;
     
   }
 
@@ -59,21 +64,20 @@
   }
 
   /*main section*/
-  #wrap {
-    background-color: #ffffff;
-  }
+  
   .about-section {
  display: flex;
  align-items: center;
  justify-content:space-between;
  gap: 30px;
- margin: 40px;
+ margin: 5px;
  font-size: 15px;
   }
 
   .pixel-art {
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 170px;
+    max-height: 170px;
+    padding: 5px;
   }
 
 
@@ -82,7 +86,8 @@
   }
 
   .info {
-    text-align: center;
+    align-items: center;
+    padding: 10px;
   }
 
   /*About page*/
