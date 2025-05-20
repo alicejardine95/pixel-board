@@ -1,9 +1,3 @@
- /*overrides default browser styling*/
-  * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
 
 
   /*Bootstrap navbar styling*/
@@ -18,12 +12,19 @@
 
   body {
     background-color: #ffffff;
-    margin: 30px;
+    
   }
 
-  #wrap {
-    padding: 60px;
+  nav {
+   background-image: url("/assets/Images/hero.png");
+   font-size: 30px;
   }
+
+  #hero {
+    background-image: url("/assets/Images/hero.png");
+    height: 300px;
+  }
+  
   .title {
     font-size: 65px;
     text-align: center;
@@ -38,11 +39,14 @@
 
   .btn-teal {
     background-color: rgb(103, 181, 181);
-    color: white;
+    color: rgb(0, 0, 0);
     display: block;
-    width: 60%;
+    width: 30%;
     margin: 0 auto;
     padding: 0 auto;
+    font-family: 'smooch sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
   }
 
   .btn-teal:hover {
@@ -82,4 +86,28 @@
 .about-section {
     justify-content:center;
     font-size: 25px;
+}
+
+#hero {
+    height: 500px;
+}
+
+.title {
+    font-size: 200px;
+    color: rgb(0, 0, 0);
+    padding: 
+}
+
+#title-info {
+    color: rgb(0, 0, 0);
+    
+    letter-spacing: 0.4cm;
+    word-spacing: 0.4cm;
+    font-size: 50px;
+    margin: 15px 40px 35px;
+}
+
+.btn {
+    font-size: 40px;
+    width: 20%
 }
