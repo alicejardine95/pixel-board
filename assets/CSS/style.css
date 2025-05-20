@@ -16,13 +16,17 @@
 
   body {
     background-color: #ffffff;
-    padding: 15px;
+    padding: 5px;
     
   }
 
   nav {
    font-size: 30px;
   }
+
+  .custom-navbar .nav-link:hover {
+  color: #00bfa6 !important;
+}
 
   #heading {
     padding-bottom: 50px;
@@ -48,6 +52,8 @@
     border-radius: 25%;
     padding: 20px;
     margin: 50px;
+    letter-spacing: 0.2cm;
+    word-spacing: 0.2cm;
   }
 
   .btn-teal {
@@ -61,6 +67,7 @@
     text-transform: uppercase;
     font-weight: bold;
     border: black solid 2px;
+    font-size: 30px;
   }
 
   .btn-teal:hover {
@@ -164,8 +171,20 @@
     .about-footer a:hover {
         color: white;
     }
-  /* Media query: tablets and larger (768px and up) */
-@media screen and (min-width: 768px) {
+
+  	@media screen and (min-width: 768px) {
+
+      .title {
+        font-size: 90px;
+      }
+
+      .btn-teal {
+        font-size: 40px;
+      }
+    }
+
+  /* Media query: large tablets and PC monitors (768px and up) */
+@media screen and (min-width: 1024px) {
 .about-section {
     justify-content:center;
     font-size: 25px;
@@ -176,26 +195,20 @@
 }
 
 .title {
-    font-size: 200px;
+    font-size: 150px;
     color: rgb(0, 0, 0);
-    padding: 
 }
 
 #title-info {
     color: rgb(0, 0, 0);
-    
-    letter-spacing: 0.4cm;
-    word-spacing: 0.4cm;
     font-size: 50px;
     margin: 15px 40px 35px;
 }
 
 .btn {
     font-size: 40px;
-    width: 20%
+    width: 40%
 }
-
-
 
       .about-text {
         padding: 0 10px;
