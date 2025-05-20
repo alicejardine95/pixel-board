@@ -24,7 +24,10 @@
    font-size: 30px;
   }
 
-  
+  #heading {
+    
+    padding-bottom: 50px;
+  }
   
   .title {
     font-size: 65px;
@@ -77,7 +80,6 @@
   .pixel-art {
     max-width: 130px;
     max-height: 130px;
-    
   }
 
 
