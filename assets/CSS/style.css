@@ -15,21 +15,17 @@
     
   }
 
-  #home-nav {
-   background-image: url("/assets/images/hero.png");
+  nav {
    font-size: 30px;
   }
 
-  #hero {
-    background-image: url("/assets/images/hero.png");
-    height: 300px;
-  }
+  
   
   .title {
     font-size: 65px;
     text-align: center;
     font-family: 'Smooch Sans', sans-serif;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(73, 163, 188, 0.7);
     border-radius: 25%;
     padding: 20px
   }
@@ -96,14 +92,15 @@
       padding: 20px;
       background-color: #f8f9fa;
       color: #333;
-      background-image: url('/../assets/images/hero.png');
     }
 
     .about-title {
       text-align: center;
       color: #2c3e50;
+      background: rgba(73, 163, 188, 0.7);
       font-family: 'smooch sans', sans-serif;
       font-size: 100px;
+      border-radius: 25%;
     }
 
     .about-intro {
@@ -114,13 +111,10 @@
       line-height: 1.6;
       font-family: 'smooch sans', sans-serif;
       font-weight: 450;
-      
+  
     }
 
-    .about-title, .about-intro {
-        background: rgba(255, 255, 255, 0.5);
-        border-radius: 25%;
-    }
+
 
     .about-page {
       display: flex;
