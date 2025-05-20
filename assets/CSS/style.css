@@ -16,12 +16,12 @@
   }
 
   #home-nav {
-   background-image: url("/assets/Images/hero.png");
+   background-image: url("/assets/images/hero.png");
    font-size: 30px;
   }
 
   #hero {
-    background-image: url("/assets/Images/hero.png");
+    background-image: url("/assets/images/hero.png");
     height: 300px;
   }
   
@@ -96,7 +96,7 @@
       padding: 20px;
       background-color: #f8f9fa;
       color: #333;
-      background-image: url(/assets/Images/hero.png);
+      background-image: url('/assets/images/hero.png');
     }
 
     .about-title {
