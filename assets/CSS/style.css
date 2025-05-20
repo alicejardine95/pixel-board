@@ -148,11 +148,18 @@
       font-weight: bold;
     }
 
-
     .about-footer {
       text-align: center;
       font-size: 1.1rem;
       margin-top: 40px;
+    }
+
+    .about-footer a {
+        color: black;
+    }
+
+    .about-footer a:hover {
+        color: white;
     }
   /* Media query: tablets and larger (768px and up) */
 @media screen and (min-width: 768px) {
