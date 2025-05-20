@@ -192,10 +192,7 @@
     width: 20%
 }
 
-.about-section {
-        flex-direction: column;
-        text-align: center;
-      }
+
 
       .about-text {
         padding: 0 10px;
