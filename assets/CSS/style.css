@@ -25,7 +25,6 @@
   }
 
   #heading {
-    
     padding-bottom: 50px;
   }
   
@@ -52,7 +51,7 @@
     background-color: rgba(177, 228, 228, 0.8);
     color: rgb(0, 0, 0);
     display: block;
-    width: 30%;
+    width: 50%;
     margin: 0 auto;
     padding: 0 auto;
     font-family: 'smooch sans', sans-serif;
