@@ -54,7 +54,7 @@
   }
 
   .btn-teal:hover {
-    background-color: rgb(18, 152, 152, 0.8);
+    background-color: rgba(31, 169, 169, 0.8);
     color: rgb(255, 255, 255);
   }
 
