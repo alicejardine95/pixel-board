@@ -176,6 +176,32 @@
 #create-title {
   font-size: 120px;
 }
+
+.modal-button-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 20px 20px 50px;
+}
+
+.modal-button-wrapper button {
+  background-color: rgba(177, 228, 228, 0.8);
+    color: rgb(0, 0, 0);
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    padding: 0 auto;
+    font-family: 'smooch sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: black solid 2px;
+    font-size: 30px;
+  }
+
+  .modal-button-wrapper button:hover {
+    background-color: rgba(31, 169, 169, 0.8);
+    color: rgb(255, 255, 255);
+  }
+
   .controls {
   margin-bottom: 15px;
   display: flex;

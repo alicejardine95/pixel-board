@@ -43,6 +43,49 @@
   </header>
   <main>
     <h1 id="create-title">Pixel Board</h1>
+    <!--Bootstrap modal-->
+    <div class="modal-button-wrapper">
+     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#scrollableModal">
+  How to Use Pixel Board
+</button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="scrollableModal" tabindex="-1" aria-labelledby="scrollableModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="scrollableModalLabel">Pixel Board Guide</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!--modal content-->
+        <p>Welcome to Pixel Board! Here's how to use each feature to bring your creativity to life:</p>
+        <h5>🎚️Grid Size Control</h5>
+        <p>Use the slider to choose your desired grid size. Click the "Apply Size" button to update the board.</p>
+        <h5>🎨 Colour Picker</h5>
+        Select a drawing colour using the built-in colour picker. This will be used when drawing in Draw Mode.</p>
+        <h5>✏️Draw Mode</h5>
+        <p>Draw mode will automatically be activated, and is here to show you whether you are in "draw mode" or "erase mode". Only one mode (draw or erase) can be active at any time.</p>
+        <h5>🧽 Erase Mode</h5>
+        <p>Click the "Erase" button to switch to erasing mode.
+        Click or drag to remove color from squares.</p>
+        <h5>🔳 Grid Lines</h5>
+        Use the "Grid Lines" checkbox to show or hide the grid lines. Hiding them creates a smoother, cleaner look.</p>
+        <h5>🌈 Rainbow Mode</h5>
+        <p>Click this checkbox to enter Rainbow Mode. Each stroke will use a different color from a rainbow cycle.</p>
+        <h5>🧼Clear Board</h5>
+        <p>Click the "Clear Board" button to erase the entire canvas. Perfect for starting fresh!</p>
+        <h5>💾 Download</h5>
+        <p>Click the "Download" button to save your drawing as a PNG image. Your pixel art will be preserved just as it appears on the screen</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
     <!--Pixel Board controls-->
     <div class="controls">
         <label for="grid-size">Grid size:</label>
@@ -72,4 +115,5 @@
 </div>
 </div>
 <script src="assets/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </main>
