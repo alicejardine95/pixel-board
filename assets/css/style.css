@@ -33,7 +33,7 @@
     padding-top: 40px;
   }
   
-  .title, #create-title {
+  .title {
     font-size: 65px;
     text-align: center;
     font-family: 'Smooch Sans', sans-serif;
@@ -80,7 +80,8 @@
   .about-section {
  display: flex;
  align-items: center;
-justify-content: center;
+justify-content: space-between;
+flex: 1 1 0;
  gap: 30px;
  margin: 5px;
  font-size: 25px;
@@ -111,12 +112,12 @@ justify-content: center;
     }
 
     .about-title {
-      text-align: center;
-      color: #2c3e50;
-      background: rgba(73, 163, 188, 0.7);
-      font-family: 'smooch sans', sans-serif;
-      font-size: 100px;
-      border-radius: 25%;
+     font-size: 65px;
+    text-align: center;
+    font-family: 'Smooch Sans', sans-serif;
+    background: rgba(73, 163, 188, 0.7);
+    border-radius: 25%;
+    padding: 20px
     }
 
     .about-intro {
@@ -173,9 +174,6 @@ justify-content: center;
     }
 
     /*create page*/
-#create-title {
-  font-size: 120px;
-}
 
 .modal-button-wrapper {
   display: flex;
@@ -229,6 +227,7 @@ justify-content: center;
 button.active {
    background-color: rgb(71, 135, 135);
     color: white;
+}
 
 #pixelBoard {
   display: grid;
@@ -255,16 +254,22 @@ button.active {
         font-size: 40px;
       }
 
+      .about-section {
+        justify-content: center;
+        align-items: center;
+        
+      }
+
+      .create-title {
+        font-size: 90px;
+      }
+
     }
 
   /* Media query: large tablets and PC monitors (768px and up) */
 @media screen and (min-width: 1024px) {
 
 
-.title {
-    font-size: 150px;
-    color: rgb(0, 0, 0);
-}
 
 #title-info {
     color: rgb(0, 0, 0);
@@ -277,7 +282,7 @@ button.active {
     width: 40%
 }
 
-.about-text {
-  padding: 0 10px;
-      }
+  
+
+
     }
