@@ -80,10 +80,10 @@
   .about-section {
  display: flex;
  align-items: center;
- justify-content:space-between;
+justify-content: center;
  gap: 30px;
  margin: 5px;
- font-size: 15px;
+ font-size: 25px;
   }
 
   .pixel-art {
@@ -254,22 +254,12 @@ button.active {
       .btn-teal {
         font-size: 40px;
       }
-/*create page*/
-      .controls {
-      word-spacing: 2cm;
-      }
+
     }
 
   /* Media query: large tablets and PC monitors (768px and up) */
 @media screen and (min-width: 1024px) {
-.about-section {
-    justify-content:center;
-    font-size: 25px;
-}
 
-#hero {
-    height: 500px;
-}
 
 .title {
     font-size: 150px;
@@ -287,7 +277,7 @@ button.active {
     width: 40%
 }
 
-      .about-text {
-        padding: 0 10px;
+.about-text {
+  padding: 0 10px;
       }
     }
