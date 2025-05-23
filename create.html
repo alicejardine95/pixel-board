@@ -45,12 +45,15 @@
     <h1 id="create-title">Pixel Board</h1>
     <!--Pixel Board controls-->
     <div class="controls">
-        <label for="colour-palette">Colour Palette</label>
-        <input type="color" id="colour-palette"> 
-
         <label for="grid-size">Grid size:</label>
         <input type="range" min="1" max="40" id="grid-size">
         <button id="apply-size">Apply Size</button>
+
+        <label for="colour-palette">Colour Palette</label>
+        <input type="color" id="colour-palette"> 
+
+        <button id="draw" class="active">Draw</button>
+        <button id="eraser">Eraser</button>
 
         <label for="toggle-grid">Show Grid Lines</label>
         <input type="checkbox" id="toggle-grid" checked>
@@ -58,8 +61,8 @@
         <label for="raindbow-toggle">Rainbow Mode</label>
         <input type="checkbox" id="rainbow-toggle">
 
-        <button id="clear-board">Clear Board</button>
-        <button id="download-board">Download Board</button>
+        <button id="clear-board">Clear</button>
+        <button id="download-board">Download</button>
 
         <div id="colorHistory"></div>
 

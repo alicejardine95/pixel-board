@@ -172,6 +172,22 @@
         color: teal;
     }
 
+    /*create page*/
+    .controls {
+  margin-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+#pixelBoard {
+  display: grid;
+  justify-content: center;
+  margin: auto;
+  max-width: 90vw;
+}
+
   	@media screen and (min-width: 768px) {
 
       .title {
