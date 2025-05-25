@@ -157,8 +157,8 @@
     }
 
     .about-img {
-      flex: 1 1 300px;
-      max-width: 300px;
+      flex: 1 1 200px;
+      max-width: 200px;
       border-radius: 8px;
     }
 
