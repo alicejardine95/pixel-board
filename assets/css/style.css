@@ -238,7 +238,6 @@ button.active {
     color: white;
 }
 
-.board-container {
   .board-container {
   display: flex;
   justify-content: center;  /* horizontal centering */
@@ -282,16 +281,14 @@ button.active {
         font-size: 40px;
       }
 
-      .about-section {
-        justify-content: center;
-        align-items: center;
-        
-      }
 
       .create-title {
         font-size: 90px;
       }
 
+     .about-section {
+      width: 25%;
+     }
       
     }
 
