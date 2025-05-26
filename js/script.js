@@ -69,6 +69,23 @@ applySizeBtn.addEventListener('click', () => {
     createGrid(gridSizeInput.value);
 });
 
+//Making grid responsive for mobile and desktop
+function updateGridSizeMax() {
+    const isMobile = window.innerWidth <= 768;
+    gridSizeInput.max = isMobile ? 20 : 150;
+
+   
+    if (parseInt(gridSizeInput.value) > parseInt(gridSizeInput.max)) {
+        gridSizeInput.value = gridSizeInput.max;
+    }
+
+    
+    const gridSizeValue = document.getElementById('grid-size-value');
+    if (gridSizeValue) {
+        gridSizeValue.textContent = gridSizeInput.value;
+    }
+}
+
 // Toggle grid lines
 toggleGrid.addEventListener('change', () => {
     pixelBoard.classList.toggle('show-grid', toggleGrid.checked);
@@ -112,3 +129,7 @@ document.body.addEventListener('mouseup', () => isDrawing = false);
 
 // Initial grid
 createGrid(gridSizeInput.value || 16);
+
+//Runs on page loading and window resizing
+window.addEventListener('load', updateGridSizeMax);
+window.addEventListener('resize', updateGridSizeMax);

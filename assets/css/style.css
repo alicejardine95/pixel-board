@@ -252,7 +252,7 @@ button.active {
   width: auto;
   height: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 20px); /* fallback in JS anyway */
+  grid-template-columns;
   grid-auto-rows: 20px;
   margin: 0 auto; /* center horizontally */
   box-sizing: content-box;
@@ -274,7 +274,6 @@ button.active {
 }
 
 
-
   	@media screen and (min-width: 768px) {
 
       .title {
@@ -294,6 +293,7 @@ button.active {
       .create-title {
         font-size: 90px;
       }
+
 
     }
 
