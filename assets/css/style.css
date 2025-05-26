@@ -249,29 +249,27 @@ button.active {
 
 
   #pixel-board {
-  width: auto;
-  height: auto;
   display: grid;
   grid-template-columns;
   grid-auto-rows: 20px;
-  margin: 0 auto; /* center horizontally */
+  margin: 0 auto; 
   box-sizing: content-box;
-}
-
-.show-grid {
   justify-content: center;
 }
 
-.show-grid .pixel {
-  border: 1px solid #eee;
-}
 
- .pixel {
+
+.pixel {
   width: 20px;
   height: 20px;
-  outline: 1px solid #ccc; 
   box-sizing: border-box;
+  background-color: white;
 }
+
+.show-grid .pixel {
+  border: 1px solid #ccc;
+}
+
 
 
   	@media screen and (min-width: 768px) {
@@ -294,7 +292,7 @@ button.active {
         font-size: 90px;
       }
 
-
+      
     }
 
   /* Media query: large tablets and PC monitors (768px and up) */
