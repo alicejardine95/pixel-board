@@ -238,14 +238,28 @@ button.active {
     color: white;
 }
 
-#pixel-board {
-  width: 600px;
-  height: 600px;
-  margin: 20px auto;
+.board-container {
+  .board-container {
+  display: flex;
+  justify-content: center;  /* horizontal centering */
+  align-items: center;      /* vertical centering */
+  width: 100%;
+  margin-top: 20px;
+}
+
+
+  #pixel-board {
+  width: auto;
+  height: auto;
   display: grid;
+  grid-template-columns: repeat(auto-fill, 20px); /* fallback in JS anyway */
+  grid-auto-rows: 20px;
+  margin: 0 auto; /* center horizontally */
   box-sizing: content-box;
-  padding: 0 auto;
- 
+}
+
+.show-grid {
+  justify-content: center;
 }
 
 .show-grid .pixel {
