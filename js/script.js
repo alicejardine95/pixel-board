@@ -1,17 +1,114 @@
-const pixelBoard = document.getElementById("pixel-board");
-const colorPalette = document.getElementById("colour-palette");
-const clearBtn = document.getElementById("clear-board");
-const gridSizeInput = document.getElementById("grid-size");
-const applyGridSizeBtn = document.getElementById("apply-size");
-const exportBtn = document.getElementById("download-board");
-const exportCanvas = document.getElementById("export-canvas");
-const toggleGrid = document.getElementById("toggle-grid");
-const rainbowMode = document.getElementById("rinbow-mode");
-const colorHistoryContainer = document.getElementById("colour-history");
-const drawBtn = document.getElementById("draw");
-const eraserBtn = document.getElementById("eraser");
+const pixelBoard = document.getElementById('pixel-board');
+const gridSizeInput = document.getElementById('grid-size');
+const applySizeBtn = document.getElementById('apply-size');
+const colorPicker = document.getElementById('colour-palette');
+const drawBtn = document.getElementById('draw');
+const eraserBtn = document.getElementById('eraser');
+const toggleGrid = document.getElementById('toggle-grid');
+const rainbowToggle = document.getElementById('rainbow-toggle');
+const clearBtn = document.getElementById('clear-board');
+const downloadBtn = document.getElementById('download-board');
+const exportCanvas = document.getElementById('export-canvas');
 
+let currentColor = '#000000';
 let isDrawing = false;
-let gridSize = 16;
-let colorHistory = [];
-let isErasing = false;
+let drawMode = true;
+let rainbowMode = false;
+let hue = 0;
+
+// Create grid
+function createGrid(size) {
+    pixelBoard.innerHTML = '';
+    pixelBoard.style.display = 'grid';
+    pixelBoard.style.gridTemplateColumns = `repeat(${size}, 20px)`;
+    pixelBoard.style.gridTemplateRows = `repeat(${size}, 20px)`;
+
+    for (let i = 0; i < size * size; i++) {
+        const pixel = document.createElement('div');
+        pixel.classList.add('pixel');
+        pixel.addEventListener('mousedown', handleDraw);
+        pixel.addEventListener('mouseover', (e) => {
+            if (isDrawing) handleDraw(e);
+        });
+        pixelBoard.appendChild(pixel);
+    }
+}
+// Drawing handler
+function handleDraw(e) {
+    if (e.buttons !== 1 && !e.type.includes('down')) return;
+    const color = rainbowMode ? getRainbowColor() : currentColor;
+    e.target.style.backgroundColor = drawMode ? color : '';
+}
+
+// Get rainbow color
+function getRainbowColor() {
+    const color = `hsl(${hue}, 100%, 50%)`;
+    hue = (hue + 10) % 360;
+    return color;
+}
+
+// Toggle draw/erase mode
+drawBtn.addEventListener('click', () => {
+    drawMode = true;
+    drawBtn.classList.add('active');
+    eraserBtn.classList.remove('active');
+});
+eraserBtn.addEventListener('click', () => {
+    drawMode = false;
+    eraserBtn.classList.add('active');
+    drawBtn.classList.remove('active');
+});
+
+// Color picker
+colorPicker.addEventListener('input', (e) => {
+    currentColor = e.target.value;
+});
+
+// Apply grid size
+applySizeBtn.addEventListener('click', () => {
+    createGrid(gridSizeInput.value);
+});
+
+// Toggle grid lines
+toggleGrid.addEventListener('change', () => {
+    pixelBoard.classList.toggle('show-grid', toggleGrid.checked);
+});
+
+// Rainbow mode
+rainbowToggle.addEventListener('change', () => {
+    rainbowMode = rainbowToggle.checked;
+});
+
+// Clear board
+clearBtn.addEventListener('click', () => {
+    document.querySelectorAll('.pixel').forEach(pixel => {
+        pixel.style.backgroundColor = '';
+    });
+});
+
+// Download board
+downloadBtn.addEventListener('click', () => {
+    const size = gridSizeInput.value;
+    exportCanvas.width = exportCanvas.height = 600;
+    const ctx = exportCanvas.getContext('2d');
+    const pixels = document.querySelectorAll('.pixel');
+    const cellSize = exportCanvas.width / size;
+
+    pixels.forEach((pixel, i) => {
+        const color = window.getComputedStyle(pixel).backgroundColor || 'white';
+        ctx.fillStyle = color === 'rgba(0, 0, 0, 0)' ? '#ffffff' : color;
+        ctx.fillRect((i % size) * cellSize, Math.floor(i / size) * cellSize, cellSize, cellSize);
+    });
+
+    const link = document.createElement('a');
+    link.download = 'pixel-art.png';
+    link.href = exportCanvas.toDataURL();
+    link.click();
+});
+
+// Mouse events
+pixelBoard.addEventListener('mousedown', () => isDrawing = true);
+document.body.addEventListener('mouseup', () => isDrawing = false);
+
+// Initial grid
+createGrid(gridSizeInput.value || 16);

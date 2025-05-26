@@ -238,19 +238,23 @@ button.active {
     color: white;
 }
 
-#pixelBoard {
-  display: grid;
-  justify-content: center;
-  margin: auto;
-  max-width: 90vw;
+#pixel-board {
+  width: 600px;
+  height: 600px;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+}*/
+
+.show-grid .pixel {
+  border: 1px solid #eee;
 }
 
+
 .pixel {
-      width: 20px;
-      height: 20px;
-      border: 1px solid #ddd;
-      background-color: white;
-    }
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ddd;
+}
 
 
   	@media screen and (min-width: 768px) {
