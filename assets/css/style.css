@@ -242,19 +242,23 @@ button.active {
   width: 600px;
   height: 600px;
   margin: 20px auto;
-  border: 1px solid #ccc;
-}*/
+  display: grid;
+  box-sizing: content-box;
+  padding: 0 auto;
+ 
+}
 
 .show-grid .pixel {
   border: 1px solid #eee;
 }
 
-
-.pixel {
+ .pixel {
   width: 20px;
   height: 20px;
-  border: 1px solid #ddd;
+  outline: 1px solid #ccc; 
+  box-sizing: border-box;
 }
+
 
 
   	@media screen and (min-width: 768px) {
