@@ -16,6 +16,12 @@ let drawMode = true;
 let rainbowMode = false;
 let hue = 0;
 
+// Touch scroll detection
+let isTouchScrolling = false;
+let touchStartX = 0;
+let touchStartY = 0;
+const scrollThreshold = 10;
+
 function createGrid(size) {
     pixelBoard.innerHTML = '';
     pixelBoard.style.display = 'grid';
@@ -32,47 +38,41 @@ function createGrid(size) {
             if (isDrawing) handleDraw(e);
         });
 
-        // Touch events
-       let isTouchScrolling = false;
-let touchStartX = 0;
-let touchStartY = 0;
-const scrollThreshold = 10;
+        // Touch events with scroll detection
+        pixel.addEventListener('touchstart', (e) => {
+            isTouchScrolling = false;
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
 
-// Touch events
-pixel.addEventListener('touchstart', (e) => {
-  isTouchScrolling = false;
-  touchStartX = e.touches[0].clientX;
-  touchStartY = e.touches[0].clientY;
-  
-  handleTouchDraw(e); // still draw on touchstart
-});
+            handleTouchDraw(e); // draw on tap
+        });
 
-pixel.addEventListener('touchmove', (e) => {
-  const dx = Math.abs(e.touches[0].clientX - touchStartX);
-  const dy = Math.abs(e.touches[0].clientY - touchStartY);
-  
-  if (dx > scrollThreshold || dy > scrollThreshold) {
-    isTouchScrolling = true;
-  }
+        pixel.addEventListener('touchmove', (e) => {
+            const dx = Math.abs(e.touches[0].clientX - touchStartX);
+            const dy = Math.abs(e.touches[0].clientY - touchStartY);
 
-  if (!isTouchScrolling) {
-    handleTouchDraw(e); // only draw if not scrolling
-  }
-});
+            if (dx > scrollThreshold || dy > scrollThreshold) {
+                isTouchScrolling = true;
+            }
 
-pixelBoard.appendChild(pixel);
+            if (!isTouchScrolling) {
+                handleTouchDraw(e);
+            }
+        });
+
+        pixelBoard.appendChild(pixel);
     }
 }
+
 // Drawing handler
 function handleDraw(e) {
     if (e.buttons !== 1 && !e.type.includes('down')) return;
     const color = rainbowMode ? getRainbowColor() : currentColor;
     e.target.style.backgroundColor = drawMode ? color : '';
-
 }
 
 function handleTouchDraw(e) {
-    e.preventDefault(); // prevent scrolling
+    e.preventDefault();
     const touch = e.touches[0];
     const target = document.elementFromPoint(touch.clientX, touch.clientY);
     if (target && target.classList.contains('pixel')) {
@@ -81,28 +81,23 @@ function handleTouchDraw(e) {
     }
 }
 
-function handleTouchMove(e) {
-    handleTouchDraw(e); // delegate to the same logic
-}
-
-// Get rainbow color
 function getRainbowColor() {
     const color = `hsl(${hue}, 100%, 50%)`;
     hue = (hue + 10) % 360;
     return color;
 }
 
-// Toggle draw/erase mode
+// Mode toggle
 drawBtn.addEventListener('click', () => {
-  drawMode = true;
-  drawBtn.classList.add('active');
-  eraserBtn.classList.remove('active');
+    drawMode = true;
+    drawBtn.classList.add('active');
+    eraserBtn.classList.remove('active');
 });
 
 eraserBtn.addEventListener('click', () => {
-  drawMode = false;
-  eraserBtn.classList.add('active');
-  drawBtn.classList.remove('active');
+    drawMode = false;
+    eraserBtn.classList.add('active');
+    drawBtn.classList.remove('active');
 });
 
 // Color picker
@@ -110,34 +105,32 @@ colorPicker.addEventListener('input', (e) => {
     currentColor = e.target.value;
 });
 
-// Apply grid size
+// Grid resizing
 applySizeBtn.addEventListener('click', () => {
     createGrid(gridSizeInput.value);
 });
 
-//Making grid responsive for mobile and desktop
+// Responsive max grid size
 function updateGridSizeMax() {
     const isMobile = window.innerWidth <= 768;
     gridSizeInput.max = isMobile ? 50 : 120;
 
-   
     if (parseInt(gridSizeInput.value) > parseInt(gridSizeInput.max)) {
         gridSizeInput.value = gridSizeInput.max;
     }
 
-    
     const gridSizeValue = document.getElementById('grid-size-value');
     if (gridSizeValue) {
         gridSizeValue.textContent = gridSizeInput.value;
     }
 }
 
-// Toggle grid lines
+// Grid toggle
 toggleGrid.addEventListener('change', () => {
     pixelBoard.classList.toggle('show-grid', toggleGrid.checked);
 });
 
-// Rainbow mode
+// Rainbow toggle
 rainbowToggle.addEventListener('change', () => {
     rainbowMode = rainbowToggle.checked;
 });
@@ -149,7 +142,7 @@ clearBtn.addEventListener('click', () => {
     });
 });
 
-// Download board
+// Download board as image
 downloadBtn.addEventListener('click', () => {
     const size = gridSizeInput.value;
     exportCanvas.width = exportCanvas.height = 600;
@@ -169,13 +162,20 @@ downloadBtn.addEventListener('click', () => {
     link.click();
 });
 
-// Mouse events
+// Mouse down/up for draw tracking
 pixelBoard.addEventListener('mousedown', () => isDrawing = true);
 document.body.addEventListener('mouseup', () => isDrawing = false);
 
-// Initial grid
+// Initialize
 createGrid(gridSizeInput.value || 16);
 
-//Runs on page loading and window resizing
+// Set draw button as default active on load
+window.addEventListener('DOMContentLoaded', () => {
+    drawMode = true;
+    drawBtn.classList.add('active');
+    eraserBtn.classList.remove('active');
+});
+
+// Handle max grid size on load and resize
 window.addEventListener('load', updateGridSizeMax);
 window.addEventListener('resize', updateGridSizeMax);
