@@ -16,7 +16,6 @@ let drawMode = true;
 let rainbowMode = false;
 let hue = 0;
 
-// Create grid
 function createGrid(size) {
     pixelBoard.innerHTML = '';
     pixelBoard.style.display = 'grid';
@@ -26,10 +25,17 @@ function createGrid(size) {
     for (let i = 0; i < size * size; i++) {
         const pixel = document.createElement('div');
         pixel.classList.add('pixel');
+
+        // Mouse events
         pixel.addEventListener('mousedown', handleDraw);
         pixel.addEventListener('mouseover', (e) => {
             if (isDrawing) handleDraw(e);
         });
+
+        // Touch events
+        pixel.addEventListener('touchstart', handleTouchDraw);
+        pixel.addEventListener('touchmove', handleTouchMove);
+
         pixelBoard.appendChild(pixel);
     }
 }
@@ -38,6 +44,21 @@ function handleDraw(e) {
     if (e.buttons !== 1 && !e.type.includes('down')) return;
     const color = rainbowMode ? getRainbowColor() : currentColor;
     e.target.style.backgroundColor = drawMode ? color : '';
+
+}
+
+function handleTouchDraw(e) {
+    e.preventDefault(); // prevent scrolling
+    const touch = e.touches[0];
+    const target = document.elementFromPoint(touch.clientX, touch.clientY);
+    if (target && target.classList.contains('pixel')) {
+        const color = rainbowMode ? getRainbowColor() : currentColor;
+        target.style.backgroundColor = drawMode ? color : '';
+    }
+}
+
+function handleTouchMove(e) {
+    handleTouchDraw(e); // delegate to the same logic
 }
 
 // Get rainbow color
@@ -72,7 +93,7 @@ applySizeBtn.addEventListener('click', () => {
 //Making grid responsive for mobile and desktop
 function updateGridSizeMax() {
     const isMobile = window.innerWidth <= 768;
-    gridSizeInput.max = isMobile ? 20 : 20;
+    gridSizeInput.max = isMobile ? 50 : 120;
 
    
     if (parseInt(gridSizeInput.value) > parseInt(gridSizeInput.max)) {
