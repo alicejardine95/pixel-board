@@ -247,6 +247,8 @@
   align-items: center;      /* vertical centering */
   width: 100%;
   margin-top: 20px;
+  overflow: auto;
+  max-height: 80vh;
 }
 
 
@@ -260,6 +262,7 @@
   overflow: auto;
   max-height: 80vh;
   max-width: 100vw;
+  touch-action: pan-y;
 }
 
 
