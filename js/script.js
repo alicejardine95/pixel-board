@@ -72,12 +72,14 @@ function handleDraw(e) {
 }
 
 function handleTouchDraw(e) {
-    e.preventDefault();
-    const touch = e.touches[0];
-    const target = document.elementFromPoint(touch.clientX, touch.clientY);
-    if (target && target.classList.contains('pixel')) {
-        const color = rainbowMode ? getRainbowColor() : currentColor;
-        target.style.backgroundColor = drawMode ? color : '';
+    if (!isTouchScrolling) {
+        e.preventDefault(); 
+        const touch = e.touches[0];
+        const target = document.elementFromPoint(touch.clientX, touch.clientY);
+        if (target && target.classList.contains('pixel')) {
+            const color = rainbowMode ? getRainbowColor() : currentColor;
+            target.style.backgroundColor = drawMode ? color : '';
+        }
     }
 }
 
