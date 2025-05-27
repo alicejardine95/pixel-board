@@ -75,6 +75,29 @@
     color: rgb(255, 255, 255);
   }
 
+  /*Controls*/
+  #clear-board {
+    background-color: red;
+  }
+
+  #clear-board, #download-board, #draw, #eraser {
+    font-weight: 500;
+    color: white;
+  }
+
+  #draw, #eraser {
+    background-color: white;
+    color: black;
+    border: solid 1px black;
+  }
+  #draw.active,
+#eraser.active {
+  background-color: rgb(54, 144, 144);
+  color: white;
+}
+
+
+  
   /*main section*/
   
   .about-section {
@@ -209,35 +232,6 @@
     color: rgb(255, 255, 255);
   }
 
-  .controls {
-  margin-bottom: 15px;
-  display: flex;
-  justify-content:center;
-  flex-wrap: wrap;
-  gap: 10px;
-  border: solid 2px black;
-  padding: 5px;
-  
-}
-
-.controls label { 
-  font-size: 20px;
-}
-
-.controls button {
-  padding: 10px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
-}
-
-.controls button:hover {
-  background-color: rgb(141, 175, 175);
-}
-
-button.active {
-   background-color: rgb(71, 135, 135);
-    color: white;
-}
-
   .board-container {
   display: flex;
   justify-content: center;  /* horizontal centering */
@@ -286,6 +280,28 @@ button.active {
       .create-title {
         font-size: 90px;
       }
+
+       .controls {
+    /* Adjust layout, padding, font size, etc. for larger screens */
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .controls label {
+    font-size: 1.1rem;
+  }
+
+  .controls input,
+  .controls button {
+    font-size: 1rem;
+  }
+
+  #download-board  {
+    width: fit-content
+  }
 
      .about-section {
       width: 25%;

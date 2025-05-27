@@ -88,28 +88,57 @@
 </div>
     <!--Pixel Board controls-->
     
-    <div class="controls">
-        <label for="grid-size">Grid size:</label>
-        <input type="range" min="1" max="150" step="1" id="grid-size" value="16">
-        <button id="apply-size">Apply Size</button>
+    <div class="controls container border border-dark rounded bg-light p-3">
+  <div class="d-flex flex-wrap align-items-center justify-content-center gap-3">
 
-        <label for="colour-palette">Colour Palette</label>
-        <input type="color" id="colour-palette"> 
+    <!-- Grid Size Controls -->
+    <div class="d-flex flex-column align-items-center">
+      <label for="grid-size" class="form-label mb-1">Grid Size</label>
+      <input type="range" class="form-range" min="1" max="150" step="1" id="grid-size" value="16" style="width: 150px;">
+      <button id="apply-size" class="btn btn-outline-primary btn-sm mt-1">Apply</button>
+    </div>
 
-        <button id="draw" class="active">Draw</button>
-        <button id="eraser">Eraser</button>
+    <!-- Color Picker -->
+    <div class="d-flex flex-column align-items-center">
+      <label for="colour-palette" class="form-label mb-1">Palette</label>
+      <input type="color" id="colour-palette" class="form-control form-control-color">
+    </div>
 
-        <label for="toggle-grid">Show Grid Lines</label>
-        <input type="checkbox" id="toggle-grid" checked>
+    <!-- Draw/Eraser -->
+    <div class="d-flex flex-column align-items-center">
+      <label class="form-label mb-1">Mode</label>
+      <div class="btn-group">
+        <button id="draw" class="btn btn-sm">Draw</button>
+        <button id="eraser" class="btn btn-sm">Eraser</button>
+      </div>
+    </div>
 
-        <label for="raindbow-toggle">Rainbow Mode</label>
-        <input type="checkbox" id="rainbow-toggle">
+    <!-- Grid Lines Toggle -->
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" id="toggle-grid" checked>
+      <label class="form-check-label" for="toggle-grid">Grid Lines</label>
+    </div>
 
-        <button id="clear-board">Clear</button>
-        <button id="download-board">Download</button>
+    <!-- Rainbow Toggle -->
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" id="rainbow-toggle">
+      <label class="form-check-label" for="rainbow-toggle">Rainbow Mode</label>
+    </div>
 
-        <div id="colour-history"></div>
-        </div>
+    <!-- Clear/Download -->
+    <div class="d-flex flex-column align-items-center">
+      <label class="form-label mb-1">Actions</label>
+      <div class="btn-group">
+        <button id="clear-board" class="btn btn-warning btn-sm">Clear</button>
+        <button id="download-board" class="btn btn-info btn-sm">Download</button>
+      </div>
+    </div>
+
+    <!-- Color History Placeholder -->
+    <div id="colour-history" class="d-none d-md-block"></div>
+
+  </div>
+</div>
 <div class="board-container">
   <div id="pixel-board" class="show-grid"></div>
 

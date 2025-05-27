@@ -70,14 +70,15 @@ function getRainbowColor() {
 
 // Toggle draw/erase mode
 drawBtn.addEventListener('click', () => {
-    drawMode = true;
-    drawBtn.classList.add('active');
-    eraserBtn.classList.remove('active');
+  drawMode = true;
+  drawBtn.classList.add('active');
+  eraserBtn.classList.remove('active');
 });
+
 eraserBtn.addEventListener('click', () => {
-    drawMode = false;
-    eraserBtn.classList.add('active');
-    drawBtn.classList.remove('active');
+  drawMode = false;
+  eraserBtn.classList.add('active');
+  drawBtn.classList.remove('active');
 });
 
 // Color picker
