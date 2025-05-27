@@ -254,6 +254,7 @@ button.active {
   margin: 0 auto; 
   box-sizing: content-box;
   justify-content: center;
+  overflow: auto;
 }
 
 
