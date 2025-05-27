@@ -33,10 +33,34 @@ function createGrid(size) {
         });
 
         // Touch events
-        pixel.addEventListener('touchstart', handleTouchDraw);
-        pixel.addEventListener('touchmove', handleTouchMove);
+       let isTouchScrolling = false;
+let touchStartX = 0;
+let touchStartY = 0;
+const scrollThreshold = 10;
 
-        pixelBoard.appendChild(pixel);
+// Touch events
+pixel.addEventListener('touchstart', (e) => {
+  isTouchScrolling = false;
+  touchStartX = e.touches[0].clientX;
+  touchStartY = e.touches[0].clientY;
+  
+  handleTouchDraw(e); // still draw on touchstart
+});
+
+pixel.addEventListener('touchmove', (e) => {
+  const dx = Math.abs(e.touches[0].clientX - touchStartX);
+  const dy = Math.abs(e.touches[0].clientY - touchStartY);
+  
+  if (dx > scrollThreshold || dy > scrollThreshold) {
+    isTouchScrolling = true;
+  }
+
+  if (!isTouchScrolling) {
+    handleTouchDraw(e); // only draw if not scrolling
+  }
+});
+
+pixelBoard.appendChild(pixel);
     }
 }
 // Drawing handler
