@@ -72,7 +72,7 @@ applySizeBtn.addEventListener('click', () => {
 //Making grid responsive for mobile and desktop
 function updateGridSizeMax() {
     const isMobile = window.innerWidth <= 768;
-    gridSizeInput.max = isMobile ? 20 : 150;
+    gridSizeInput.max = isMobile ? 50 : 120;
 
    
     if (parseInt(gridSizeInput.value) > parseInt(gridSizeInput.max)) {
