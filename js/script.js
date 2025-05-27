@@ -53,11 +53,10 @@ function createGrid(size) {
 
             if (dx > scrollThreshold || dy > scrollThreshold) {
                 isTouchScrolling = true;
+                return; // allow scrolling
             }
 
-            if (!isTouchScrolling) {
-                handleTouchDraw(e);
-            }
+            handleTouchDraw(e);
         });
 
         pixelBoard.appendChild(pixel);
@@ -72,11 +71,9 @@ function handleDraw(e) {
 }
 
 function handleTouchDraw(e) {
-    // Only prevent default if it's clearly a draw action
     const touch = e.touches[0];
     const target = document.elementFromPoint(touch.clientX, touch.clientY);
     if (target && target.classList.contains('pixel')) {
-        e.preventDefault(); // Only block scroll if actually touching a pixel
         const color = rainbowMode ? getRainbowColor() : currentColor;
         target.style.backgroundColor = drawMode ? color : '';
     }
