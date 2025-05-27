@@ -80,7 +80,11 @@
     background-color: red;
   }
 
-  #clear-board, #download-board, #draw, #eraser {
+  #download-board, #apply-size {
+    background-color: rgb(54, 144, 144);
+  }
+
+  #clear-board, #download-board, #draw, #eraser, #apply-size {
     font-weight: 500;
     color: white;
   }
@@ -94,6 +98,11 @@
 #eraser.active {
   background-color: rgb(54, 144, 144);
   color: white;
+}
+
+#clear-board:hover, #download-board:hover, #apply-size:hover {
+  background-color: white;
+  color: black;
 }
 
 
