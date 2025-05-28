@@ -1,151 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create🎨</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lato:wght@100;400&family=Oswald:wght@200..700&family=Poller+One&family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
-<link rel="shortcut icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
-<link rel="shortcut icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-     <!-- Bootstrap 5 CSS -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create🎨</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lato:wght@100;400&family=Oswald:wght@200..700&family=Poller+One&family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
+  <link rel="shortcut icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
+  <link rel="shortcut icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
   <header>
-    <!-- Bootstrap navbar -->
-  <nav class="navbar navbar-expand-lg custom-navbar" id="home-nav">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="create.js">Create</a>
-          </li>
-        </ul>
+    <nav class="navbar navbar-expand-lg custom-navbar" id="home-nav">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="create.html">Create</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
   </header>
   <main>
     <h1 class="title">🎨Pixel Board🖌️</h1>
-    <!--Bootstrap modal-->
+
     <div class="modal-button-wrapper">
-     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#scrollableModal">
-  How to Use Pixel Board
-</button>
-</div>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#scrollableModal">
+        How to Use Pixel Board
+      </button>
+    </div>
 
-<!-- Modal -->
-<div class="modal fade" id="scrollableModal" tabindex="-1" aria-labelledby="scrollableModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="scrollableModalLabel">Pixel Board Guide</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <!--modal content-->
-        <p>Welcome to Pixel Board! Here's how to use each feature to bring your creativity to life:</p>
-        <h5>🎚️Grid Size Control</h5>
-        <p>Use the slider to choose your desired grid size. Click the "Apply Size" button to update the board.</p>
-        <p><strong>Please note that resizing the board during drawing will automatically clear the board</strong></p>
-        <h5>🎨 Colour Picker</h5>
-        Select a drawing colour using the built-in colour picker. This will be used when drawing in Draw Mode.</p>
-        <h5>✏️Draw Mode</h5>
-        <p>Draw mode will automatically be activated, and is here to show you whether you are in "draw mode" or "erase mode". Only one mode (draw or erase) can be active at any time.</p>
-        <h5>🧽 Erase Mode</h5>
-        <p>Click the "Erase" button to switch to erasing mode.
-        Click or drag to remove color from squares.</p>
-        <h5>🔲Grid Lines</h5>
-        Use the "Grid Lines" checkbox to show or hide the grid lines. Hiding them creates a smoother, cleaner look.</p>
-        <h5>🌈 Rainbow Mode</h5>
-        <p>Click this checkbox to enter Rainbow Mode. Each stroke will use a different color from a rainbow cycle.</p>
-        <h5>🧼Clear Board</h5>
-        <p>Click the "Clear Board" button to erase the entire canvas. Perfect for starting fresh!</p>
-        <h5>💾 Download</h5>
-        <p>Click the "Download" button to save your drawing as a PNG image. Your pixel art will be preserved just as it appears on the screen</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    <div class="modal fade" id="scrollableModal" tabindex="-1" aria-labelledby="scrollableModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="scrollableModalLabel">Pixel Board Guide</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Welcome to Pixel Board! Here's how to use each feature to bring your creativity to life:</p>
+            <h5>🎚️Grid Size Control</h5>
+            <p>Use the slider to choose your desired grid size. Click the "Apply Size" button to update the board.</p>
+            <p><strong>Please note that resizing the board during drawing will automatically clear the board.</strong></p>
+
+            <h5>🎨 Colour Picker</h5>
+            <p>Select a drawing colour using the built-in colour picker. This will be used when drawing in Draw Mode.</p>
+
+            <h5>✏️Draw Mode</h5>
+            <p>Draw mode will automatically be activated, and is here to show you whether you are in "draw mode" or "erase mode". Only one mode (draw or erase) can be active at any time.</p>
+
+            <h5>🧽 Erase Mode</h5>
+            <p>Click the "Erase" button to switch to erasing mode. Click or drag to remove color from squares.</p>
+
+            <h5>🔲Grid Lines</h5>
+            <p>Use the "Grid Lines" checkbox to show or hide the grid lines. Hiding them creates a smoother, cleaner look.</p>
+
+            <h5>🌈 Rainbow Mode</h5>
+            <p>Click this checkbox to enter Rainbow Mode. Each stroke will use a different color from a rainbow cycle.</p>
+
+            <h5>🧼Clear Board</h5>
+            <p>Click the "Clear Board" button to erase the entire canvas. Perfect for starting fresh!</p>
+
+            <h5>💾 Download</h5>
+            <p>Click the "Download" button to save your drawing as a PNG image. Your pixel art will be preserved just as it appears on the screen.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-    <!--Pixel Board controls-->
-    
+
     <div class="controls container border border-dark rounded bg-light p-3">
-  <div class="d-flex flex-wrap align-items-center justify-content-center gap-3">
+      <div class="d-flex flex-wrap align-items-center justify-content-center gap-3">
+        <!-- Grid Size Controls -->
+        <div class="d-flex flex-column align-items-center">
+          <label for="grid-size" class="form-label mb-1">Grid Size</label>
+          <input type="range" class="form-range" min="1" max="150" step="1" id="grid-size" value="16" style="width: 150px;">
+          <button id="apply-size" class="btn btn-sm mt-1">Apply</button>
+        </div>
 
-    <!-- Grid Size Controls -->
-    <div class="d-flex flex-column align-items-center">
-      <label for="grid-size" class="form-label mb-1">Grid Size</label>
-      <input type="range" class="form-range" min="1" max="150" step="1" id="grid-size" value="16" style="width: 150px;">
-      <button id="apply-size" class="btn btn-sm mt-1">Apply</button>
-    </div>
+        <!-- Color Picker -->
+        <div class="d-flex flex-column align-items-center">
+          <label for="colour-palette" class="form-label mb-1">Palette</label>
+          <input type="color" id="colour-palette" class="form-control form-control-color">
+        </div>
 
-    <!-- Color Picker -->
-    <div class="d-flex flex-column align-items-center">
-      <label for="colour-palette" class="form-label mb-1">Palette</label>
-      <input type="color" id="colour-palette" class="form-control form-control-color">
-    </div>
+        <!-- Draw/Eraser -->
+        <div class="d-flex flex-column align-items-center">
+          <label class="form-label mb-1">Mode</label>
+          <div class="btn-group">
+            <button id="draw" class="btn btn-sm active">Draw</button>
+            <button id="eraser" class="btn btn-sm">Eraser</button>
+          </div>
+        </div>
 
-    <!-- Draw/Eraser -->
-    <div class="d-flex flex-column align-items-center">
-      <label class="form-label mb-1">Mode</label>
-      <div class="btn-group">
-        <button id="draw" class="btn btn-sm active">Draw</button>
-        <button id="eraser" class="btn btn-sm">Eraser</button>
+        <!-- Grid Lines Toggle -->
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="toggle-grid" checked>
+          <label class="form-check-label" for="toggle-grid">Grid Lines</label>
+        </div>
+
+        <!-- Rainbow Toggle -->
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="rainbow-toggle">
+          <label class="form-check-label" for="rainbow-toggle">Rainbow Mode</label>
+        </div>
+
+        <!-- Clear/Download -->
+        <div class="d-flex flex-column align-items-center">
+          <label class="form-label mb-1">Actions</label>
+          <div class="btn-group">
+            <button id="clear-board" class="btn btn-warning btn-sm">Clear</button>
+            <button id="download-board" class="btn btn-info btn-sm">Download</button>
+          </div>
+        </div>
+
+        <!-- Color History Placeholder -->
+        <div id="colour-history" class="d-none d-md-block"></div>
       </div>
     </div>
 
-    <!-- Grid Lines Toggle -->
-    <div class="form-check form-switch">
-      <input class="form-check-input" type="checkbox" id="toggle-grid" checked>
-      <label class="form-check-label" for="toggle-grid">Grid Lines</label>
+    <div class="board-container" style="overflow: auto; max-height: 80vh;">
+      <div id="pixel-board" class="show-grid"></div>
+      <canvas id="export-canvas" style="display:none"></canvas>
     </div>
-
-    <!-- Rainbow Toggle -->
-    <div class="form-check form-switch">
-      <input class="form-check-input" type="checkbox" id="rainbow-toggle">
-      <label class="form-check-label" for="rainbow-toggle">Rainbow Mode</label>
-    </div>
-
-    <!-- Clear/Download -->
-    <div class="d-flex flex-column align-items-center">
-      <label class="form-label mb-1">Actions</label>
-      <div class="btn-group">
-        <button id="clear-board" class="btn btn-warning btn-sm">Clear</button>
-        <button id="download-board" class="btn btn-info btn-sm">Download</button>
-      </div>
-    </div>
-
-    <!-- Color History Placeholder -->
-    <div id="colour-history" class="d-none d-md-block"></div>
-
-  </div>
-</div>
-<div class="board-container" style="overflow: auto; max-height: 80vh;">
-  <div id="pixel-board" class="show-grid"></div>
-
-  <canvas id="export-canvas" style="display:none"></canvas>
-</div>
-</div>
-</div>
-<script src="js/script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </main>
+
+  <script src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
