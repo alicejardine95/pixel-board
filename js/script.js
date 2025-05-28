@@ -24,47 +24,6 @@ let touchStartX = 0;
 let touchStartY = 0;
 const scrollThreshold = 10;
 
-function createGrid(size) {
-    pixelBoard.innerHTML = '';
-    pixelBoard.style.display = 'grid';
-    pixelBoard.style.gridTemplateColumns = `repeat(${size}, 20px)`;
-    pixelBoard.style.gridTemplateRows = `repeat(${size}, 20px)`;
-
-    for (let i = 0; i < size * size; i++) {
-        const pixel = document.createElement('div');
-        pixel.classList.add('pixel');
-
-        // Mouse events
-        pixel.addEventListener('mousedown', handleDraw);
-        pixel.addEventListener('mouseover', (e) => {
-            if (isDrawing) handleDraw(e);
-        });
-
-        // Touch events with scroll detection
-        pixel.addEventListener('touchstart', (e) => {
-            isTouchScrolling = false;
-            touchStartX = e.touches[0].clientX;
-            touchStartY = e.touches[0].clientY;
-
-            handleTouchDraw(e); // draw on tap
-        });
-
-        pixel.addEventListener('touchmove', (e) => {
-            const dx = Math.abs(e.touches[0].clientX - touchStartX);
-            const dy = Math.abs(e.touches[0].clientY - touchStartY);
-
-            if (dx > scrollThreshold || dy > scrollThreshold) {
-                isTouchScrolling = true;
-                return; // allow scrolling
-            }
-
-            handleTouchDraw(e);
-        });
-
-        pixelBoard.appendChild(pixel);
-    }
-}
-
 // Drawing handler
 function handleDraw(e) {
     if (e.buttons !== 1 && !e.type.includes('down')) return;
@@ -78,6 +37,49 @@ function handleTouchDraw(e) {
     if (target && target.classList.contains('pixel')) {
         const color = rainbowMode ? getRainbowColor() : currentColor;
         target.style.backgroundColor = drawMode ? color : '';
+    }
+}
+
+// Moved out-of-loop handlers
+function handleMouseOver(e) {
+    if (isDrawing) handleDraw(e);
+}
+
+function handleTouchStart(e) {
+    isTouchScrolling = false;
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+    handleTouchDraw(e);
+}
+
+function handleTouchMove(e) {
+    const dx = Math.abs(e.touches[0].clientX - touchStartX);
+    const dy = Math.abs(e.touches[0].clientY - touchStartY);
+
+    if (dx > scrollThreshold || dy > scrollThreshold) {
+        isTouchScrolling = true;
+        return; // allow scrolling
+    }
+
+    handleTouchDraw(e);
+}
+
+function createGrid(size) {
+    pixelBoard.innerHTML = '';
+    pixelBoard.style.display = 'grid';
+    pixelBoard.style.gridTemplateColumns = `repeat(${size}, 20px)`;
+    pixelBoard.style.gridTemplateRows = `repeat(${size}, 20px)`;
+
+    for (let i = 0; i < size * size; i++) {
+        const pixel = document.createElement('div');
+        pixel.classList.add('pixel');
+
+        pixel.addEventListener('mousedown', handleDraw);
+        pixel.addEventListener('mouseover', handleMouseOver);
+        pixel.addEventListener('touchstart', handleTouchStart);
+        pixel.addEventListener('touchmove', handleTouchMove);
+
+        pixelBoard.appendChild(pixel);
     }
 }
 
