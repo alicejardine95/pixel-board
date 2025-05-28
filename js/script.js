@@ -1,3 +1,5 @@
+/* jshint esversion: 6 */
+
 const pixelBoard = document.getElementById('pixel-board');
 const gridSizeInput = document.getElementById('grid-size');
 const applySizeBtn = document.getElementById('apply-size');
